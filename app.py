@@ -14,6 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
 url='https://drive.google.com/file/d/1CfkNYSDh0kNq43VHmOHsNaxQ5gmLYXK6/view?usp=sharing'
 url='https://drive.google.com/uc?id=' + url.split('/')[-2]
+logging.debug("Loading movies.")
 movies_df =  pd.read_csv(url)
 
 # Load the model on startup
