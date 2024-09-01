@@ -27,7 +27,8 @@ else:
     logging.debug("downloading pkl file.")
     gdown.download('https://drive.google.com/uc?export=download&id=14V7Bd_FuwR5-IOjP5HTefFRXT1lZWy3j', quiet=False)
     logging.debug("Loading model")
-    algo = load_model(model_path)
+    from joblib import load
+    algo = load(model_path, mmap_mode='r')
     logging.debug("model loaded !")
 
 # Prepare movie data
