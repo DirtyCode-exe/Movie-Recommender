@@ -8,7 +8,11 @@ RUN apt-get update && apt-get install -y \
 
 # Set the working directory in the container
 WORKDIR /app
+
+# Set environment variables
 ENV PORT 5050
+ENV FLASK_APP=app.py
+
 # Copy the requirements file into the container at /app
 COPY requirements.txt .
 
@@ -18,11 +22,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
-# Expose port 5000
+# Expose port 5050
 EXPOSE 5050
 
-# Define environment variable
-ENV FLASK_APP=app.py
-
 # Run the application
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=$PORT"]
