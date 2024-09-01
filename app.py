@@ -21,7 +21,7 @@ if os.path.exists(model_path):
     logging.debug("Loading model from disk.")
     algo = load_model(model_path)
 else:
-    gdown.download('https://drive.google.com/file/d/14V7Bd_FuwR5-IOjP5HTefFRXT1lZWy3j/view?usp=sharing', quiet=False)
+    gdown.download('https://drive.google.com/uc?export=download&id=14V7Bd_FuwR5-IOjP5HTefFRXT1lZWy3j', quiet=False)
     algo = load_model(model_path)
 
 # Prepare movie data
