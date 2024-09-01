@@ -12,10 +12,12 @@ if os.path.exists(model_path):
 else:
     # Train the model and save it
     algo = train_and_save_model(data_chunks, model_path)
-
-movie_name_to_id, movie_id_to_name, movie_id_to_genre, movie_id_to_year = prepare_movie_data('movies.csv')
+import gdown
 url='https://drive.google.com/file/d/1CfkNYSDh0kNq43VHmOHsNaxQ5gmLYXK6/view?usp=sharing'
 url='https://drive.google.com/uc?id=' + url.split('/')[-2]
+if not os.path.exists("movies.csv"):
+    gdown.download(url)
+movie_name_to_id, movie_id_to_name, movie_id_to_genre, movie_id_to_year = prepare_movie_data('movies.csv')
 movies = pd.read_csv(url)
 movies.dropna(inplace=True)
 
