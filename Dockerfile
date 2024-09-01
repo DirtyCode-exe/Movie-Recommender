@@ -19,7 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose port 5000
-EXPOSE 5000
+EXPOSE 5050
 
 # Define environment variable
 ENV FLASK_APP=app.py
