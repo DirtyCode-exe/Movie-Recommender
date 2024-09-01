@@ -5,8 +5,8 @@ import joblib
 import os
 from loadData import data_chunks
 
-model_path='https://drive.google.com/file/d/14V7Bd_FuwR5-IOjP5HTefFRXT1lZWy3j/view'
-model_path='https://drive.google.com/uc?id=' + model_path.split('/')[-2]
+model_path='recommendation_model.pkl'
+
 
 def train_and_save_model(data_chunks, model_path):
     algo = SVD()  # Use SVD algorithm for collaborative filtering
