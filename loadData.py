@@ -22,7 +22,7 @@ def prepare_movie_data(movies_file):
     return movie_name_to_id, movie_id_to_name, movie_id_to_genre, movie_id_to_year
 
 url='https://drive.google.com/file/d/1lZ66f02CpjHgeyrmnZDBMNbw-ZJVLA9E/view?usp=sharing'
-url='https://drive.google.com/uc?id=' + url.split('/')[-2]
+#url='https://drive.google.com/uc?id=' + url.split('/')[-2]
 #test=pd.read_csv(url)
 import gdown
 gdown.download(url)
