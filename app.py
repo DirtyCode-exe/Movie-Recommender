@@ -83,5 +83,5 @@ def recommend():
         return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5050))  # Use the PORT environment variable, default to 5050
+    port = int(os.environ.get('PORT', 8501))  # Use the PORT environment variable, default to 5050
     app.run(host='0.0.0.0', port=port, debug=True)
