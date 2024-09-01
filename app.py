@@ -21,8 +21,11 @@ if os.path.exists(model_path):
     logging.debug("Loading model from disk.")
     algo = load_model(model_path)
 else:
+    logging.debug("downloading pkl file.")
     gdown.download('https://drive.google.com/uc?export=download&id=14V7Bd_FuwR5-IOjP5HTefFRXT1lZWy3j', quiet=False)
+    logging.debug("Loading model")
     algo = load_model(model_path)
+    logging.debug("model loaded !")
 
 # Prepare movie data
 logging.debug("Preparing movie data.")
