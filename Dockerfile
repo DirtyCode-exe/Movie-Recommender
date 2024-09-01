@@ -1,29 +1,19 @@
 FROM python:3.10-slim
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Set environment variables
-ENV PORT 5050
-ENV FLASK_APP=app.py
-
-# Copy the requirements file into the container at /app
+# Copy the requirements file
 COPY requirements.txt .
 
-# Install Python dependencies
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code into the container
+# Copy the rest of the application code
 COPY . .
 
-# Expose port 5050
-EXPOSE 5050
+# Expose the port Streamlit will run on
+EXPOSE 8501
 
-# Run the application
-CMD ["flask", "run", "--host=0.0.0.0", "--port=$PORT"]
+# Run Streamlit
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
