@@ -25,5 +25,5 @@ url='https://drive.google.com/file/d/1lZ66f02CpjHgeyrmnZDBMNbw-ZJVLA9E/view?usp=
 url='https://drive.google.com/uc?id=' + url.split('/')[-2]
 #test=pd.read_csv(url)
 import gdown
-gdown.download(url)
+gdown.download('https://drive.google.com/file/d/1lZ66f02CpjHgeyrmnZDBMNbw-ZJVLA9E/view?usp=sharing')
 data_chunks = load_data("ratings.csv")
